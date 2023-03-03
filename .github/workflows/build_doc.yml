@@ -29,5 +29,5 @@ jobs:
 
       - name: Deploy docs
         env:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PAT }}
         run: python -m mkdocs gh-deploy --force
