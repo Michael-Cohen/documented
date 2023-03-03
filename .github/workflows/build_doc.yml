@@ -1,0 +1,33 @@
+name: Build doc
+
+on:
+  push:
+    branches: [ main ]
+  # Allow this workflow to be run manually:
+  workflow_dispatch:
+
+jobs:
+  build-doc:
+    runs-on: ubuntu-latest
+    steps:
+      # Check-out the repository so that the job can access it and set up Python:
+      - uses: actions/checkout@v3
+
+      # Set up Python, install Poetry and install package:
+      - name: Set up Python version
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.9"
+
+      - name: Create and start virtual env.
+        run: |
+          python -m venv venv
+          source venv/bin/activate
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Deploy docs
+        env:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: python -m mkdocs gh-deploy --force
