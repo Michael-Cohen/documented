@@ -2,7 +2,7 @@ site_name: documented
 repo_url: https://github.com/Michael-Cohen/documented
 
 theme:
-  name: material
+  name: readthedocs #material
   favicon: img/favicon.ico
   palette:
     - scheme: default
