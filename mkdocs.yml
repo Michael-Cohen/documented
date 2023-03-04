@@ -4,6 +4,7 @@ repo_url: https://github.com/Michael-Cohen/documented
 theme:
   name: readthedocs #material
   favicon: img/favicon.ico
+  logo: img/FULL_WHITE.svg
 #  palette:
 #    - scheme: default
 #     toggle:
